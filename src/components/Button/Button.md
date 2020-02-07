@@ -4,5 +4,5 @@
 ```
 
 ```js
-<Button size="large">Button</Button>
+<Button size="large" title="Some Button">Button</Button>
 ```

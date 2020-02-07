@@ -1,15 +1,23 @@
 import React from 'react';
 
-export interface IProps {
+export interface ButtonProps {
   children: React.ReactChild;
   /** The button size */
-  size: 'small' | 'large';
-  margin: any;
+  size?: 'small' | 'large';
+  /** margin around the button */
+  margin?: number;
+  /** What is dispalyed inside the button */
+  title: string;
 }
 
-function Button({ children, size, margin = 12 }: IProps) {
+function Button({
+  size = 'small',
+  margin = 12,
+  title = 'button',
+}: ButtonProps) {
   return (
     <button
+      type="button"
       style={{
         margin,
         border: 'none',
@@ -19,7 +27,7 @@ function Button({ children, size, margin = 12 }: IProps) {
         color: 'white',
       }}
     >
-      {children}
+      {title}
     </button>
   );
 }
