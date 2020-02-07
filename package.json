@@ -26,6 +26,11 @@
     "check-format": "yarn prettier --list-different ",
     "validate": "yarn check-format && yarn lint && yarn build"
   },
+  "husky": {
+    "pre-commit": {
+      "run": "lint-staged && yarn build"
+    }
+  },
   "dependencies": {},
   "peerDependencies": {
     "prop-types": "^15.5.4",
