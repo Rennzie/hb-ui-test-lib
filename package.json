@@ -27,8 +27,8 @@
     "validate": "yarn check-format && yarn lint && yarn build"
   },
   "husky": {
-    "pre-commit": {
-      "run": "lint-staged && yarn build"
+    "hooks": {
+      "pre-commit": "lint-staged && yarn build:package"
     }
   },
   "dependencies": {},
