@@ -13,14 +13,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "jsx": "react"
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true
   },
   "include": [
-    "**/src/**/*.+(ts|tsx)",
+    "**/src/**/*.+(ts|tsx|d.ts|css)",
     "rollup.config.js",
     "styleguide.config.js"
   ],
-  "exclude": ["node_modules", "build", "dist"]
+  "exclude": ["node_modules", "build", "dist", "styleguide"]
 }

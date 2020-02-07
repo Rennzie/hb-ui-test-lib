@@ -1,35 +1,49 @@
 import React from 'react';
+import classNames from 'classnames';
+import styles from './Button.css';
 
 export interface ButtonProps {
   children: React.ReactChild;
-  /** The button size */
-  size?: 'small' | 'large';
-  /** margin around the button */
-  margin?: number;
-  /** What is dispalyed inside the button */
-  title: string;
+  theme: 'primary' | 'secondary' | 'negative' | 'back' | 'link';
+  size: 'large' | 'small';
+  disabled: boolean;
+  className: string;
+  onClick: () => void;
+  type: 'button' | 'submit' | 'reset';
+  wide: boolean;
+  loading: boolean;
 }
-
-function Button({
-  size = 'small',
-  margin = 12,
-  title = 'button',
+export function Button({
+  children,
+  disabled = false,
+  size = 'large',
+  theme = 'primary',
+  className,
+  onClick,
+  wide = false,
+  type = 'button',
+  loading = false,
 }: ButtonProps) {
+  const composedClassName = classNames(
+    className,
+    styles.button,
+    styles[theme],
+    styles[size],
+    {
+      [styles.loading]: loading,
+      [styles.disabled]: disabled,
+      [styles.wide]: wide,
+    },
+  );
   return (
     <button
-      type="button"
-      style={{
-        margin,
-        border: 'none',
-        padding: size === 'small' ? '8px 12px' : '12px 16px',
-        background: 'hotpink',
-        borderRadius: '4px',
-        color: 'white',
-      }}
+      className={composedClassName}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
     >
-      {title}
+      <div className={styles.contents}>{children}</div>
+      {loading && <div className={styles.loader} />}
     </button>
   );
 }
-
-export default Button;

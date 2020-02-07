@@ -24,14 +24,16 @@
     "prettier": "prettier --ignore-path .gitignore --write \"./**/*.+(ts|tsx|js|json|css)\" ",
     "format": "yarn prettier --write ",
     "check-format": "yarn prettier --list-different ",
-    "validate": "yarn check-format && yarn lint && yarn build"
+    "validate": "yarn check-format && yarn lint && yarn build:package"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && yarn build:package"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^16.8.0",
@@ -42,6 +44,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-url": "^4.0.2",
     "@svgr/rollup": "^5.1.0",
+    "@types/classnames": "^2.2.9",
     "@types/jest": "^25.1.1",
     "@types/node": "^13.7.0",
     "@types/react": "^16.3.13",
@@ -51,6 +54,7 @@
     "apollo": "^2.21.2",
     "apollo-utilities": "^1.3.3",
     "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "cross-env": "^7.0.0",
     "eslint": "^6.8.0",
