@@ -1,6 +1,6 @@
 {
   "name": "hb-ui-test-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "author": "rennzie",
   "license": "MIT",
@@ -12,13 +12,12 @@
     "node": ">=8"
   },
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "start:styleguide": "npx styleguidist server",
-    "build:styleguide": "npx styleguidist build",
+    "build:package": "rm -rf dist && rollup -c",
+    "start:styleguide": "rm -rf dist && npx styleguidist server",
+    "build:styleguide": "rm -rf dist && npx styleguidist build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "yarn run build",
+    "prepare": "yarn run build:package",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "lint": "eslint --ignore-path .gitignore .",
