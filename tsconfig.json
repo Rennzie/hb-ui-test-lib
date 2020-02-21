@@ -18,6 +18,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["src/", "rollup.config.js", "styleguide.config.js"],
+  "include": [
+    "src/",
+    "jest.config.js",
+    "rollup.config.js",
+    "styleguide.config.js"
+  ],
   "exclude": ["node_modules", "build", "dist", "styleguide"]
 }

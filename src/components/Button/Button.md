@@ -8,6 +8,7 @@
 <Button theme="link" disabled >disabled link</Button>
 ```
 
-```js
-<Button fullWidth>Fullwidth Button</Button>
+```js padded margin
+<Button fullWidth>Fullwidth Primary</Button>
+<Button fullWidth theme="secondary">Fullwidth Secondary</Button>
 ```

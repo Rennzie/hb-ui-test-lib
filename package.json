@@ -13,9 +13,11 @@
   },
   "scripts": {
     "build:package": "rm -rf dist && rollup -c",
-    "start:styleguide": "rm -rf dist && npx styleguidist server",
     "build:styleguide": "rm -rf dist && npx styleguidist build",
-    "test": "react-scripts test",
+    "start:styleguide": "rm -rf dist && npx styleguidist server",
+    "test:watch": "react-scripts test",
+    "test:coverage": "yarn test --coverage --watchAll=false",
+    "test:ci": "yarn test --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "yarn run build:package",
     "predeploy": "cd example && yarn install && yarn run build",

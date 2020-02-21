@@ -51,6 +51,7 @@ module.exports = {
     '@typescript-eslint/eslint(camelcase)': 'off',
     'import/no-cycle': 'off',
     'no-underscore-dangle': 'off',
+    'import/no-extraneous-dependencies': 'off',
 
     //===== PLUGINS ==========//
     'react/jsx-filename-extension': [

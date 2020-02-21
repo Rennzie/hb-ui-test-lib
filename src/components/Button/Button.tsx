@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { styled, makeStyles } from '@material-ui/styles';
+import { Theme } from '../Theme/Theme';
 
 const ButtonBase = styled('button')({
   position: 'relative',
@@ -21,34 +22,34 @@ const ButtonContents = styled('span')({
   transition: 'opacity 100ms ease-in',
 });
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ color }: Theme) => ({
   primary: {
-    backgroundColor: '#00c8ed',
-    color: 'white',
-    border: '1px solid #00c8ed',
-    '&:hover': { backgroundColor: '#02b2d4' },
+    backgroundColor: color.primary.main,
+    color: color.text.primary,
+    border: `1px solid ${color.primary.main}`,
+    '&:hover': { backgroundColor: color.primary.dark },
     '&:active': {
-      color: '#02b2d4',
-      background: 'white',
-      border: '1px solid #02b2d4',
+      color: color.primary.dark,
+      background: color.common.white,
+      border: `1px solid ${color.primary.dark}`,
     },
   },
 
   secondary: {
-    color: '#00c8ed',
-    backgroundColor: 'white',
-    border: '1px solid #00c8ed',
-    '&:hover': { borderColor: '#02b2d4', color: '#02b2d4' },
+    color: color.primary.main,
+    backgroundColor: color.common.white,
+    border: `1px solid ${color.primary.main}`,
+    '&:hover': { borderColor: color.primary.dark, color: color.primary.dark },
     '&:active': {
-      color: 'white',
-      background: '#00c8ed',
-      border: '1px solid #00c8ed',
+      color: color.common.white,
+      background: color.primary.main,
+      border: `1px solid ${color.primary.main}`,
     },
   },
 
   link: {
     background: 'transparent',
-    color: '#02b2d4',
+    color: color.primary.light,
     cursor: 'pointer',
     fontWeight: 'bold',
     border: 'none',
@@ -106,7 +107,7 @@ const useStyles = makeStyles({
     from: { transform: 'rotate(0)' },
     to: { transform: 'rotate(360deg)' },
   },
-});
+}));
 
 export interface ButtonProps {
   children: React.ReactChild;
