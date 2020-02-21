@@ -9,6 +9,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: './',
   },
+
   extends: [
     'airbnb',
     'plugin:@typescript-eslint/recommended',
