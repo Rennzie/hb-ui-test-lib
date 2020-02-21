@@ -7,5 +7,5 @@ module.exports = {
   propsParser: require('react-docgen-typescript').withCustomConfig(
     './tsconfig.json',
   ).parse,
-  require: ['babel-polyfill', path.join(__dirname, '**/*.css')],
+  // require: ['babel-polyfill', path.join(__dirname, '**/*.css')],
 };

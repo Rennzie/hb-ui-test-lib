@@ -32,7 +32,8 @@
     }
   },
   "dependencies": {
-    "classnames": "^2.2.6"
+    "@material-ui/styles": "^4.9.0",
+    "clsx": "^1.1.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
