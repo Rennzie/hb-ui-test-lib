@@ -20,6 +20,7 @@
   },
   "include": [
     "src/",
+    "/test/**.*.+(js|ts)",
     "jest.config.js",
     "rollup.config.js",
     "styleguide.config.js"

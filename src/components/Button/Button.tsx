@@ -61,42 +61,50 @@ const useStyles = makeStyles(({ color }: Theme) => ({
   disabled: {
     opacity: 0.5,
     cursor: 'not-allowed',
+    '&:hover': 'none',
   },
 
   fullWidth: {
     width: '100%',
   },
 
-  loading: {
-    opacity: '0.5',
-    pointerEvents: 'none',
-    '&:after': {
-      content: "''",
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      pointerEvents: 'auto',
-      cursor: 'not-allowed',
-    },
-  },
+  // loading: {
+  //   opacity: '0.5',
+  //   pointerEvents: 'none',
+  //   '&:after': {
+  //     content: "''",
+  //     position: 'absolute',
+  //     width: '100%',
+  //     height: '100%',
+  //     pointerEvents: 'auto',
+  //     cursor: 'not-allowed',
+  //   },
+  // },
 
   loadingContents: { opacity: '0' },
 
   // TODO: fix the loader symbol
 
   loader: {
+    content: '',
+    // backgroundColor: 'black',
+    stroke: 'currentColor',
+    color: 'red',
     position: 'absolute',
     top: 'calc(50% - 8px)',
     right: 'calc(50% - 8px)',
+    // TODO: change the spinner color here somehow
     borderTop: '3px solid rgba(255, 255, 255, 0.2)',
     borderRight: '3px solid rgba(255, 255, 255, 0.2)',
     borderBottom: '3px solid rgba(255, 255, 255, 0.2)',
     borderLeft: '3px solid #ffffff',
     transform: 'translateZ(0)',
     opacity: '0',
-    animation: '$loaderFade 100ms ease-in, $loaderSpin 1s infinite linear',
+    animation: '$loaderFade 400ms ease-in, $loaderSpin 1s infinite linear',
     animationFillMode: 'forwards',
-    // '&:after': { borderRadius: '50%', width: '20px', height: '20px' },
+    borderRadius: '50%',
+    width: '16px',
+    height: '16px',
   },
 
   '@keyframes loaderFade': {
@@ -136,8 +144,8 @@ export function Button({
   return (
     <ButtonBase
       className={clsx(className, classes[theme], {
-        [classes.loading]: loading,
-        [classes.disabled]: disabled,
+        // [classes.loading]: loading,
+        [classes.disabled]: disabled || loading,
         [classes.fullWidth]: fullWidth,
       })}
       disabled={disabled || loading}

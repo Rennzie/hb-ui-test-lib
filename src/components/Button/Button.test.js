@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../../../test/testing-utils';
 import { Button } from './Button';
 
 it('should render a button with a title which is clickable', async () => {
